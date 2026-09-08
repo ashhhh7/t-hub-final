@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../state/app_state.dart';
 import '../../theme/psk_theme.dart';
 import '../../widgets/student_shield_pill.dart';
+import '../dashboard/master_dashboard_screen.dart';
 import '../sports/sports_feed_screen.dart';
 import '../casino/casino_lobby_screen.dart';
 import '../squads/squad_battles_screen.dart';
@@ -21,12 +22,13 @@ class MainShellScreen extends StatefulWidget {
 class _MainShellScreenState extends State<MainShellScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = const [
-    SportsFeedScreen(),
-    CasinoLobbyScreen(),
-    SquadBattlesScreen(),
-    StudentVaultScreen(),
-    WalletHistoryScreen(),
+  late final List<Widget> _screens = [
+    MasterDashboardScreen(onNavigateTab: (idx) => setState(() => _currentIndex = idx)),
+    const SportsFeedScreen(),
+    const CasinoLobbyScreen(),
+    const SquadBattlesScreen(),
+    const StudentVaultScreen(),
+    const WalletHistoryScreen(),
   ];
 
   @override
@@ -69,7 +71,7 @@ class _MainShellScreenState extends State<MainShellScreen> {
           actions: [
             // Live Wallet Balance Button
             GestureDetector(
-              onTap: () => setState(() => _currentIndex = 4),
+              onTap: () => setState(() => _currentIndex = 5),
               child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 12),
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -131,9 +133,13 @@ class _MainShellScreenState extends State<MainShellScreen> {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: PskTheme.pskGold,
           unselectedItemColor: PskTheme.textMuted,
-          selectedLabelStyle: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 11),
-          unselectedLabelStyle: GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 10),
+          selectedLabelStyle: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 10),
+          unselectedLabelStyle: GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 9.5),
           items: [
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard_rounded),
+              label: 'Dashboard',
+            ),
             const BottomNavigationBarItem(
               icon: Icon(Icons.sports_soccer),
               label: 'Sports',
