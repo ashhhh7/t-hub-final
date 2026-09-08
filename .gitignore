@@ -1,0 +1,35 @@
+# Git Ignore for PSK Student & Youth Platform (t-hub-final)
+
+# Data files (Large raw CSV and XLSX datasets exceeding GitHub 100MB limits)
+data/*.csv
+data/*.xlsx
+*.csv
+*.xlsx
+
+# Flutter & Dart dependencies and build outputs
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub/
+**/.pub-cache/
+**/coverage/
+
+# IDE and Editor files
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+migrate_working_dir/
