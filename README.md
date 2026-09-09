@@ -1,6 +1,8 @@
 # PSK Student & Youth Innovation Hub 🏆🎓
 
 > **T-Hub Final Submission** — Inspired by [PSK.hr (Prva Sportska Kladionica)](https://www.psk.hr/), tailored for university students and young adult sports fans with built-in financial safety nets and social gaming mechanics.
+> 
+> 🌐 **Live Public Web App**: [https://ashhhh7.github.io/t-hub-final/](https://ashhhh7.github.io/t-hub-final/)
 
 ---
 
